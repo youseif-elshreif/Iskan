@@ -21,6 +21,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
           alt={`سكن بالقرب من ${nearestUniversity}`}
           fill
           className="object-cover rounded-t-md"
+          priority
         />
       </div>
 
