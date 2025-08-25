@@ -108,7 +108,7 @@ export default function ContactPage() {
                 >
                   <Button
                     variant="filled"
-                    className="w-full justify-center flex items-center space-x-2 space-x-reverse"
+                    className="w-full justify-center flex items-center space-x-2 space-x"
                   >
                     <IoLogoWhatsapp className="w-5 h-5" />
                     <span>راسلنا على واتساب</span>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                 <a href="tel:+201234567890">
                   <Button
                     variant="outlined"
-                    className="w-full justify-center flex items-center space-x-2 space-x-reverse"
+                    className="w-full justify-center flex items-center space-x-2 space-x"
                   >
                     <IoCallOutline className="w-5 h-5" />
                     <span>اتصل بنا الآن</span>

@@ -178,7 +178,7 @@ const Footer = () => {
           <div className="space-y-4">
             <ContactInfo
               titleClassName="text-lg font-semibold"
-              itemClassName="flex items-center space-x-3 space-x-reverse"
+              itemClassName="flex items-center space-x-3 space-x"
               iconClassName="w-5 h-5 flex-shrink-0 ml-2"
               textClassName="text-sm"
               colorTheme="accent"

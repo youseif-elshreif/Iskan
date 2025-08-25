@@ -62,7 +62,7 @@ const FilterGroup: React.FC<FilterGroupProps> = ({
           {options.map((option) => (
             <label
               key={option.value}
-              className="flex items-center space-x-3 space-x-reverse py-2 cursor-pointer rounded transition-colors duration-200"
+              className="flex items-center space-x-3 space-x py-2 cursor-pointer rounded transition-colors duration-200"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor =
                   "var(--color-border-hover)";

@@ -11,11 +11,12 @@ const ListingCard: React.FC<ListingCardProps> = ({
   nearestUniversity,
   address,
   description,
+  price,
 }) => {
   return (
     <Card className="overflow-hidden" padding="sm" rounded="lg">
       {/* Image */}
-      <div className="relative h-48 w-full">
+      <div className="relative h-48 w-full flex flex-col">
         <Image
           src={image}
           alt={`سكن بالقرب من ${nearestUniversity}`}
@@ -26,7 +27,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 flex-1">
         {/* University */}
         <h3
           className="text-lg font-bold mb-2"
@@ -52,6 +53,16 @@ const ListingCard: React.FC<ListingCardProps> = ({
         >
           {description}
         </p>
+
+        {/* Price */}
+        {price && (
+          <p
+            className="text-lg font-bold mb-4"
+            style={{ color: "var(--color-primary)" }}
+          >
+            {price} ج.م / شهر
+          </p>
+        )}
 
         {/* Buttons */}
         <div className="flex gap-3">

@@ -1,0 +1,657 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "iskan2024",
+      "role": "admin",
+      "email": "admin@iskan.com",
+      "name": "مدير النظام"
+    }
+  ],
+  "apartments": [
+    {
+      "id": "1",
+      "title": "شقة فاخرة - الزمالك",
+      "description": "شقة مفروشة بالكامل في موقع متميز في قلب الزمالك مع إطلالة رائعة على النيل",
+      "price": "12000 ج.م / شهر",
+      "location": "شارع البرازيل",
+      "area": "الزمالك",
+      "university": "الجامعة الأمريكية بالقاهرة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة",
+      "rooms": "3",
+      "size": "120 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "ستوديو مفروش - مدينة نصر",
+      "description": "ستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنةستوديو عملي ومجهز بالكامل في منطقة هادئة وآمنة",
+      "price": "5000 ج.م / شهر",
+      "location": "شارع الطيران",
+      "area": "مدينة نصر",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "1",
+      "size": "45 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "شقة غرفتين - المهندسين",
+      "description": "شقة واسعة ومضيئة في المهندسين بجوار كافة الخدمات",
+      "price": "8500 ج.م / شهر",
+      "location": "شارع جامعة الدول العربية",
+      "area": "المهندسين",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "2",
+      "size": "85 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "ستوديو حديث - جاردن سيتي",
+      "description": "ستوديو أنيق وعصري في منطقة راقية ومميزة",
+      "price": "7000 ج.م / شهر",
+      "location": "شارع قصر العيني",
+      "area": "جاردن سيتي",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "1",
+      "size": "55 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "شقة غرفتين - المعادي",
+      "description": "شقة هادئة ومريحة في المعادي بجوار النادي الأهلي",
+      "price": "9000 ج.م / شهر",
+      "location": "شارع النصر",
+      "area": "المعادي",
+      "university": "الجامعة الأمريكية بالقاهرة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة",
+      "rooms": "2",
+      "size": "90 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-71847aa5e964?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "ستوديو مفروش - وسط البلد",
+      "description": "ستوديو في قلب القاهرة بجوار كافة المواصلات",
+      "price": "4500 ج.م / شهر",
+      "location": "شارع طلعت حرب",
+      "area": "وسط البلد",
+      "university": "الجامعة الأمريكية بالقاهرة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة",
+      "rooms": "1",
+      "size": "40 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1574632564093-6d1fe05b5c37?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "شقة غرفة واحدة - العبور",
+      "description": "شقة عملية ومناسبة للطلاب في مدينة العبور",
+      "price": "3500 ج.م / شهر",
+      "location": "الحي الأول",
+      "area": "العبور",
+      "university": "جامعة المستقبل",
+      "nearestUniversity": "جامعة المستقبل",
+      "rooms": "1",
+      "size": "60 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "شقة فاخرة - مصر الجديدة",
+      "description": "شقة أنيقة في منطقة راقية بمصر الجديدة",
+      "price": "11000 ج.م / شهر",
+      "location": "شارع الحجاز",
+      "area": "مصر الجديدة",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "3",
+      "size": "110 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "ستوديو عصري - الدقي",
+      "description": "ستوديو حديث التجهيز في منطقة الدقي الراقية",
+      "price": "6500 ج.م / شهر",
+      "location": "شارع التحرير",
+      "area": "الدقي",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "1",
+      "size": "50 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-c99dcf06b299?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "11",
+      "title": "شقة غرفتين - الشيخ زايد",
+      "description": "شقة مفروشة في كمبوند راقي بالشيخ زايد",
+      "price": "13000 ج.م / شهر",
+      "location": "الشيخ زايد",
+      "area": "6 أكتوبر",
+      "university": "جامعة 6 أكتوبر",
+      "nearestUniversity": "جامعة 6 أكتوبر",
+      "rooms": "2",
+      "size": "100 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "12",
+      "title": "شقة اقتصادية - شبرا",
+      "description": "شقة مناسبة للطلاب بأسعار معقولة في شبرا",
+      "price": "3000 ج.م / شهر",
+      "location": "شارع شبرا",
+      "area": "شبرا",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "2",
+      "size": "70 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "13",
+      "title": "ستوديو لوكس - المقطم",
+      "description": "ستوديو فاخر مع إطلالة بانورامية على القاهرة",
+      "price": "8000 ج.م / شهر",
+      "location": "المقطم",
+      "area": "المقطم",
+      "university": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "rooms": "1",
+      "size": "65 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "14",
+      "title": "شقة 4 غرف - القطامية",
+      "description": "شقة فيلا في كمبوند القطامية هايتس",
+      "price": "20000 ج.م / شهر",
+      "location": "القطامية هايتس",
+      "area": "القطامية",
+      "university": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "rooms": "4",
+      "size": "200 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "15",
+      "title": "شقة مفروشة - الرحاب",
+      "description": "شقة عائلية مفروشة بالكامل في مدينة الرحاب",
+      "price": "14000 ج.م / شهر",
+      "location": "الرحاب",
+      "area": "القاهرة الجديدة",
+      "university": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "rooms": "3",
+      "size": "130 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-c99dcf06b299?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "16",
+      "title": "ستوديو بسيط - الهرم",
+      "description": "ستوديو اقتصادي مناسب للطلاب في الهرم",
+      "price": "2500 ج.م / شهر",
+      "location": "شارع الهرم",
+      "area": "الهرم",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "1",
+      "size": "35 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1574632564093-6d1fe05b5c37?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "17",
+      "title": "شقة غرفتين - العجوزة",
+      "description": "شقة أنيقة في قلب العجوزة بجوار كافة الخدمات",
+      "price": "10000 ج.م / شهر",
+      "location": "شارع الجزيرة",
+      "area": "العجوزة",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "2",
+      "size": "95 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "18",
+      "title": "شقة 3 غرف - بولاق الدكرور",
+      "description": "شقة واسعة مناسبة للعائلات في بولاق الدكرور",
+      "price": "6000 ج.م / شهر",
+      "location": "بولاق الدكرور",
+      "area": "الجيزة",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "3",
+      "size": "115 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "19",
+      "title": "بنتهاوس فاخر - الزمالك",
+      "description": "بنتهاوس فخم مع تراس كبير وإطلالة على النيل",
+      "price": "25000 ج.م / شهر",
+      "location": "شارع 26 يوليو",
+      "area": "الزمالك",
+      "university": "الجامعة الأمريكية بالقاهرة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة",
+      "rooms": "4",
+      "size": "250 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "20",
+      "title": "شقة مودرن - الشروق",
+      "description": "شقة حديثة ومجهزة بأحدث التقنيات في مدينة الشروق",
+      "price": "7500 ج.م / شهر",
+      "location": "الشروق",
+      "area": "القاهرة الجديدة",
+      "university": "جامعة المستقبل",
+      "nearestUniversity": "جامعة المستقبل",
+      "rooms": "2",
+      "size": "80 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-71847aa5e964?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "21",
+      "title": "ستوديو مفروش - العاصمة الإدارية",
+      "description": "ستوديو عصري في العاصمة الإدارية الجديدة",
+      "price": "9000 ج.م / شهر",
+      "location": "الحي الحكومي",
+      "area": "العاصمة الإدارية",
+      "university": "الجامعة الأهلية الكندية",
+      "nearestUniversity": "الجامعة الأهلية الكندية",
+      "rooms": "1",
+      "size": "55 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "22",
+      "title": "شقة عائلية - مدينتي",
+      "description": "شقة واسعة في كمبوند مدينتي المتكامل",
+      "price": "16000 ج.م / شهر",
+      "location": "مدينتي",
+      "area": "القاهرة الجديدة",
+      "university": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "rooms": "3",
+      "size": "150 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "23",
+      "title": "شقة اقتصادية - عين شمس",
+      "description": "شقة بسيطة ومناسبة للطلاب قريبة من جامعة عين شمس",
+      "price": "3800 ج.م / شهر",
+      "location": "شارع الخليفة المأمون",
+      "area": "عين شمس",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "2",
+      "size": "75 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "24",
+      "title": "دوبلكس فاخر - المنيل",
+      "description": "دوبلكس أنيق في المنيل مع حديقة خاصة",
+      "price": "18000 ج.م / شهر",
+      "location": "شارع المنيل",
+      "area": "المنيل",
+      "university": "جامعة القاهرة",
+      "nearestUniversity": "جامعة القاهرة",
+      "rooms": "4",
+      "size": "180 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "25",
+      "title": "ستوديو مميز - النزهة",
+      "description": "ستوديو مفروش في منطقة النزهة الهادئة",
+      "price": "5500 ج.م / شهر",
+      "location": "شارع نادي الصيد",
+      "area": "النزهة",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "1",
+      "size": "48 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-c99dcf06b299?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "26",
+      "title": "شقة غرفتين - أكتوبر",
+      "description": "شقة مريحة في مدينة 6 أكتوبر بجوار الجامعات",
+      "price": "7000 ج.م / شهر",
+      "location": "الحي الأول",
+      "area": "6 أكتوبر",
+      "university": "جامعة 6 أكتوبر",
+      "nearestUniversity": "جامعة 6 أكتوبر",
+      "rooms": "2",
+      "size": "85 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "27",
+      "title": "شقة فندقية - الحي السابع",
+      "description": "شقة فندقية بخدمات متكاملة في مدينة نصر",
+      "price": "12000 ج.م / شهر",
+      "location": "الحي السابع",
+      "area": "مدينة نصر",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "2",
+      "size": "90 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-71847aa5e964?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "28",
+      "title": "شقة طلابية - الحلمية",
+      "description": "شقة مناسبة للطلاب مع أثاث بسيط في الحلمية",
+      "price": "3200 ج.م / شهر",
+      "location": "شارع الحلمية",
+      "area": "الحلمية",
+      "university": "جامعة عين شمس",
+      "nearestUniversity": "جامعة عين شمس",
+      "rooms": "2",
+      "size": "65 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1574632564093-6d1fe05b5c37?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "29",
+      "title": "لوفت عصري - الجونة",
+      "description": "لوفت فاخر في منتجع الجونة مع إطلالة على البحر",
+      "price": "30000 ج.م / شهر",
+      "location": "الجونة",
+      "area": "البحر الأحمر",
+      "university": "جامعة برلين التقنية",
+      "nearestUniversity": "جامعة برلين التقنية",
+      "rooms": "2",
+      "size": "100 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "30",
+      "title": "شقة حديثة - كايرو فيستيفال",
+      "description": "شقة مودرن بجوار مول كايرو فيستيفال سيتي",
+      "price": "11500 ج.م / شهر",
+      "location": "كايرو فيستيفال سيتي",
+      "area": "القاهرة الجديدة",
+      "university": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "rooms": "3",
+      "size": "125 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-71847aa5e964?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "31",
+      "title": "فيلا دوبلكس - بيفرلي هيلز",
+      "description": "فيلا فاخرة في كمبوند بيفرلي هيلز الشيخ زايد",
+      "price": "35000 ج.م / شهر",
+      "location": "بيفرلي هيلز",
+      "area": "الشيخ زايد",
+      "university": "جامعة 6 أكتوبر",
+      "nearestUniversity": "جامعة 6 أكتوبر",
+      "rooms": "5",
+      "size": "300 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "32",
+      "title": "شقة مشتركة - السيدة زينب",
+      "description": "شقة مناسبة للطلاب المشاركين في السيدة زينب",
+      "price": "2800 ج.م / شهر",
+      "location": "شارع السيدة زينب",
+      "area": "السيدة زينب",
+      "university": "الجامعة الأمريكية بالقاهرة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة",
+      "rooms": "3",
+      "size": "90 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "33",
+      "title": "ستوديو ذكي - نيو كايرو",
+      "description": "ستوديو مجهز بتقنيات المنزل الذكي في القاهرة الجديدة",
+      "price": "8500 ج.م / شهر",
+      "location": "نيو كايرو",
+      "area": "القاهرة الجديدة",
+      "university": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "nearestUniversity": "الجامعة الأمريكية بالقاهرة الجديدة",
+      "rooms": "1",
+      "size": "60 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "34",
+      "title": "شقة تراثية - الخان الخليلي",
+      "description": "شقة بطراز تراثي في منطقة الخان الخليلي التاريخية",
+      "price": "6000 ج.م / شهر",
+      "location": "الخان الخليلي",
+      "area": "القاهرة التاريخية",
+      "university": "جامعة الأزهر",
+      "nearestUniversity": "جامعة الأزهر",
+      "rooms": "2",
+      "size": "70 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=2080&q=80"
+      ]
+    },
+    {
+      "id": "35",
+      "title": "شقة إيكو - مدينة العبور الجديدة",
+      "description": "شقة صديقة للبيئة مع أنظمة طاقة متجددة",
+      "price": "9500 ج.م / شهر",
+      "location": "مدينة العبور الجديدة",
+      "area": "القليوبية",
+      "university": "جامعة المستقبل",
+      "nearestUniversity": "جامعة المستقبل",
+      "rooms": "3",
+      "size": "110 متر مربع",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2080&q=80",
+        "https://images.unsplash.com/photo-1560449752-c99dcf06b299?auto=format&fit=crop&w=2080&q=80"
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "date": "2024-01-15",
+      "time": "10:00",
+      "status": "available"
+    },
+    {
+      "id": "3",
+      "date": "2024-01-16",
+      "time": "11:00",
+      "status": "available"
+    },
+    {
+      "id": "c87c",
+      "date": "2025-09-10",
+      "time": "01:00",
+      "status": "available"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "name": "سارة أحمد",
+      "email": "sara@example.com",
+      "phone": "+20123456789",
+      "message": "أريد الاستفسار عن الشقق المتاحة في منطقة الجيزة قريباً من جامعة القاهرة. هل يمكنكم تزويدي بالتفاصيل والأسعار؟",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "isRead": false
+    },
+    {
+      "id": "2",
+      "name": "محمد علي",
+      "email": "mohamed@example.com",
+      "phone": "+20111222333",
+      "message": "مرحباً، أنا طالب في الجامعة الأمريكية وأبحث عن سكن قريب من الجامعة. ما هي الخيارات المتاحة؟",
+      "createdAt": "2024-01-14T15:45:00Z",
+      "isRead": true
+    },
+    {
+      "id": "3",
+      "name": "فاطمة حسن",
+      "phone": "+20155666777",
+      "message": "هل يمكنني حجز موعد لمعاينة الشقة في المعادي؟ أنا متاحة في أي وقت هذا الأسبوع.",
+      "createdAt": "2024-01-13T09:15:00Z",
+      "isRead": true
+    },
+    {
+      "id": "4",
+      "name": "أحمد محمود",
+      "email": "ahmed@example.com",
+      "message": "أرجو منكم إرسال قائمة بجميع الشقق المتاحة مع الأسعار. شكراً لكم.",
+      "createdAt": "2024-01-12T14:20:00Z",
+      "isRead": false
+    },
+    {
+      "id": "5",
+      "name": "نور الدين",
+      "email": "nour@example.com",
+      "phone": "+20999888777",
+      "message": "مساء الخير، أنا طالبة جديدة في جامعة عين شمس وأبحث عن سكن مناسب قريب من الجامعة. أرجو التواصل معي.",
+      "createdAt": "2024-01-11T18:20:00Z",
+      "isRead": true
+    }
+  ]
+}

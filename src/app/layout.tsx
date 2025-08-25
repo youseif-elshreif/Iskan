@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DecorativeElements from "@/components/DecorativeElements";
+import { AuthProvider } from "@/contexts/AuthContext";
+import AdminButton from "@/components/AdminButton";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -23,12 +25,15 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={cairo.className}>
-        <Navbar />
-        <main>
-          {children}
-          <DecorativeElements />
-        </main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main>
+            {children}
+            <DecorativeElements />
+          </main>
+          <Footer />
+          <AdminButton />
+        </AuthProvider>
       </body>
     </html>
   );

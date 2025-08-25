@@ -5,7 +5,7 @@ import { BreadcrumbProps } from "@/types";
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = "" }) => {
   return (
     <nav className={`mb-8 ${className}`}>
-      <ol className="flex items-center space-x-2 space-x-reverse text-sm">
+      <ol className="flex items-center space-x-2 space-x text-sm">
         {items.map((item, index) => (
           <React.Fragment key={index}>
             <li>

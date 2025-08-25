@@ -118,6 +118,7 @@ export interface ListingCardProps {
   nearestUniversity: string;
   address: string;
   description: string;
+  price?: number;
 }
 
 /**

@@ -136,7 +136,7 @@ export default function ListingDetailPage() {
 
               {/* Property Info */}
               <div
-                className="grid grid-cols-2 gap-4 mb-6 p-4 rounded-lg"
+                className="grid grid-cols-3 gap-4 mb-6 p-4 rounded-lg"
                 style={{ backgroundColor: "var(--color-border-light)" }}
               >
                 <div className="text-center">
@@ -159,6 +159,17 @@ export default function ListingDetailPage() {
                   </p>
                   <p className="text-sm" style={{ color: "var(--color-text)" }}>
                     المساحة
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p
+                    className="text-xl font-bold"
+                    style={{ color: "var(--color-secondary)" }}
+                  >
+                    {listing.price} ج.م
+                  </p>
+                  <p className="text-sm" style={{ color: "var(--color-text)" }}>
+                    السعر / شهر
                   </p>
                 </div>
               </div>
@@ -192,7 +203,7 @@ export default function ListingDetailPage() {
                     (amenity: string, index: number) => (
                       <div
                         key={index}
-                        className="flex items-center space-x-2 space-x-reverse"
+                        className="flex items-center space-x-2 space-x"
                       >
                         <svg
                           className="w-5 h-5"
@@ -256,7 +267,7 @@ export default function ListingDetailPage() {
                   <ContactInfo
                     className="space-y-2"
                     titleClassName="text-lg font-semibold mb-3"
-                    itemClassName="flex items-center space-x-3 space-x-reverse transition-colors hover:opacity-80"
+                    itemClassName="flex items-center space-x-3 space-x transition-colors hover:opacity-80"
                     colorTheme="primary"
                   />
                 </div>

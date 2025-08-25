@@ -26,7 +26,7 @@ const Navbar = () => {
               color: "var(--color-secondary)",
             }}
           >
-            عمارة{" "}
+            إسكان{" "}
           </Link>
 
           {/* Right link */}

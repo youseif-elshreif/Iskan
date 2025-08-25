@@ -53,14 +53,14 @@ const Button: React.FC<ButtonProps> = ({
       e.currentTarget.style.color = "var(--color-primary)";
     } else if (variant === "secondary") {
       e.currentTarget.style.backgroundColor = "var(--color-transparent)";
-      e.currentTarget.style.color = "var(--color-primary)";
+      e.currentTarget.style.color = "var(--color-accent)";
     }
   };
 
   const sizeClasses = {
     sm: "px-3 py-2 text-sm min-h-[25px]",
     md: "px-6 py-3 text-base min-h-[38px]",
-    lg: "px-10 py-4 text-lg min-h-[52px] w-full sm:w-auto",
+    lg: "px-10 py-4 text-lg min-h-[52px] w-full ",
   };
 
   const getButtonStyles = () => {
@@ -76,7 +76,7 @@ const Button: React.FC<ButtonProps> = ({
     } else if (variant === "secondary") {
       return {
         borderColor: "var(--color-accent)",
-        color: "var(--color-primary)",
+        color: "var(--color-accent)",
         backgroundColor: "var(--color-transparent)",
       };
     }
@@ -97,6 +97,7 @@ const Button: React.FC<ButtonProps> = ({
         ${sizeClasses[size]}
         ${className}
         cursor-pointer
+        flex
       `}
     >
       {children}
