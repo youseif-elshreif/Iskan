@@ -19,26 +19,26 @@ const ContactInfoSection: React.FC = () => {
     {
       icon: IoLocationOutline,
       title: "العنوان",
-      content: "شارع التحرير، الدقي، محافظة الجيزة، مصر",
-      link: "https://maps.google.com/?q=الدقي،الجيزة",
+      content: "الاسماعيلية الشيخ زايد",
+      link: "https://maps.app.goo.gl/X5tT8Dti2xW49VEU9",
     },
     {
       icon: IoCallOutline,
       title: "الهاتف",
-      content: "+20 123 456 7890",
-      link: "tel:+201234567890",
+      content: "+201277906691",
+      link: "tel:+201277906691",
     },
     {
       icon: IoMailOutline,
       title: "البريد الإلكتروني",
-      content: "info@iskan.com",
-      link: "mailto:info@iskan.com",
+      content: "youseifelshreif3@gmail.com",
+      link: "mailto:youseifelshreif3@gmail.com",
     },
     {
       icon: IoLogoWhatsapp,
       title: "واتساب",
-      content: "+20 123 456 7890",
-      link: "https://wa.me/201234567890",
+      content: "+201277906691",
+      link: "https://wa.me/201277906691",
     },
   ];
 

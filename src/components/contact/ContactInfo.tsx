@@ -74,7 +74,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
             className={`text-sm hover:opacity-80 transition-opacity ${textClassName}`}
             style={{ color: colors.textColor }}
           >
-            +20 123 456 7890
+            +201277906691
           </a>
         </div>
         <div className={`flex items-center space-x-3 space-x ${itemClassName}`}>
@@ -83,13 +83,13 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
             style={{ color: colors.iconColor }}
           />
           <a
-            href="https://wa.me/201234567890"
+            href="https://wa.me/201277906691"
             target="_blank"
             rel="noopener noreferrer"
             className={`text-sm hover:opacity-80 transition-opacity ${textClassName}`}
             style={{ color: colors.textColor }}
           >
-            +20 123 456 7890
+            +201277906691
           </a>
         </div>
         <div className={`flex items-center space-x-3 space-x ${itemClassName}`}>
@@ -98,11 +98,11 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
             style={{ color: colors.iconColor }}
           />
           <a
-            href="mailto:info@iskan.com"
+            href="mailto:youseifelshreif3@gmail.com"
             className={`text-sm hover:opacity-80 transition-opacity ${textClassName}`}
             style={{ color: colors.textColor }}
           >
-            info@iskan.com
+            youseifelshreif3@gmail.com
           </a>
         </div>
       </div>
