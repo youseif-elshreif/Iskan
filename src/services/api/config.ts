@@ -1,7 +1,9 @@
 import axios from "axios";
 
 // إعداد axios
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://iskanjson-production.up.railway.app";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  "https://iskanjson-production.up.railway.app";
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

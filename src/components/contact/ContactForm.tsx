@@ -67,13 +67,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
         isRead: false,
       };
 
-      const response = await fetch("https://iskanjson-production.up.railway.app/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(messageData),
-      });
+      const response = await fetch(
+        "https://iskanjson-production.up.railway.app/messages",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(messageData),
+        }
+      );
 
       if (response.ok) {
         setFormData({

@@ -547,6 +547,7 @@ export interface FilterGroupProps {
   selectedValues: string[];
   onChange: (values: string[]) => void;
   className?: string;
+  isOpen?: boolean;
 }
 
 export interface FiltersProps {

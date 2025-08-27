@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button, Card } from "@/components/ui";
 import { ApartmentInfoCard } from "@/components/admin";
@@ -9,7 +9,7 @@ import { ContactUsButton } from "@/components/contact";
 import { useApartments, useAppointments } from "@/services/hooks/index";
 import { Appointment, BookingData } from "@/types";
 
-export default function BookAppointmentPage() {
+function BookAppointmentContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -209,5 +209,20 @@ export default function BookAppointmentPage() {
       {/* Contact Us Button */}
       <ContactUsButton />
     </div>
+  );
+}
+
+export default function BookAppointmentPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">جاري التحميل...</p>
+        </div>
+      </div>
+    }>
+      <BookAppointmentContent />
+    </Suspense>
   );
 }
