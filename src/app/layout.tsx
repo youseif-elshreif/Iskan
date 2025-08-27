@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import DecorativeElements from "@/components/DecorativeElements";
+import { Navbar, Footer } from "@/components/layout";
+import { DecorativeElements } from "@/components/common";
 import { AuthProvider } from "@/contexts/AuthContext";
-import AdminButton from "@/components/AdminButton";
+import { AdminButton } from "@/components/admin";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],

@@ -597,14 +597,60 @@
       "status": "available"
     },
     {
+      "id": "2",
+      "date": "2024-02-20",
+      "time": "14:01",
+      "status": "booked",
+      "userName": "يسيسيب",
+      "userPhone": "01277909969",
+      "userEmail": "",
+      "userMessage": "",
+      "apartmentId": "1",
+      "apartmentTitle": "شقة فاخرة - الزمالك",
+      "apartmentLocation": "شارع البرازيل"
+    },
+    {
       "id": "3",
-      "date": "2024-01-16",
+      "date": "2024-02-16",
       "time": "11:00",
-      "status": "available"
+      "status": "postponed",
+      "userName": "يوسف احمد فوزي",
+      "userPhone": "01277906691",
+      "userEmail": "youseif@example.com",
+      "userMessage": "تم تأجيل الموعد",
+      "apartmentId": "1",
+      "apartmentTitle": "شقة فاخرة - الزمالك",
+      "apartmentLocation": "شارع البرازيل"
+    },
+    {
+      "id": "5",
+      "date": "2025-02-10",
+      "time": "12:00",
+      "status": "postponed",
+      "userName": "سارة أحمد",
+      "userPhone": "01123456789",
+      "userEmail": "sara@example.com",
+      "userMessage": "طلب تأجيل الموعد لظروف طارئة",
+      "apartmentId": "2",
+      "apartmentTitle": "ستوديو مفروش - مدينة نصر",
+      "apartmentLocation": "شارع الطيران"
     },
     {
       "id": "c87c",
       "date": "2025-09-10",
+      "time": "01:00",
+      "status": "booked",
+      "userName": "يسي",
+      "userPhone": "01277895523",
+      "userEmail": "",
+      "userMessage": "",
+      "apartmentId": "1",
+      "apartmentTitle": "شقة فاخرة - الزمالك",
+      "apartmentLocation": "شارع البرازيل"
+    },
+    {
+      "id": "070e",
+      "date": "2025-12-01",
       "time": "01:00",
       "status": "available"
     }
@@ -617,7 +663,7 @@
       "phone": "+20123456789",
       "message": "أريد الاستفسار عن الشقق المتاحة في منطقة الجيزة قريباً من جامعة القاهرة. هل يمكنكم تزويدي بالتفاصيل والأسعار؟",
       "createdAt": "2024-01-15T10:30:00Z",
-      "isRead": false
+      "isRead": true
     },
     {
       "id": "2",
@@ -642,7 +688,7 @@
       "email": "ahmed@example.com",
       "message": "أرجو منكم إرسال قائمة بجميع الشقق المتاحة مع الأسعار. شكراً لكم.",
       "createdAt": "2024-01-12T14:20:00Z",
-      "isRead": false
+      "isRead": true
     },
     {
       "id": "5",

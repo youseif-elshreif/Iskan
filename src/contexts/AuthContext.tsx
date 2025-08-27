@@ -59,7 +59,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   ): Promise<boolean> => {
     try {
       // Authenticate with JSON Server
-      const response = await fetch("http://localhost:3002/users");
+      const response = await fetch("https://iskanjson-production.up.railway.app/users");
       const users: UserWithPassword[] = await response.json();
 
       const authenticatedUser = users.find(

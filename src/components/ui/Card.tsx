@@ -36,6 +36,7 @@ const Card: React.FC<CardProps> = ({
         ${roundedClasses[rounded]}
         transition-all 
         duration-300
+        flex flex-col
         ${className}
       `}
       style={{

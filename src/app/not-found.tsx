@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/index";
 import { FaHome, FaSearch, FaArrowLeft } from "react-icons/fa";
 
 export default function NotFound() {
