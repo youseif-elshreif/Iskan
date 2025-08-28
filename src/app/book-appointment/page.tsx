@@ -40,6 +40,39 @@ function BookAppointmentContent() {
     userMessage: "",
   });
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  // Validation function
+  const validateField = (name: string, value: string) => {
+    let error = "";
+    
+    switch (name) {
+      case "userName":
+        if (!value.trim()) error = "الاسم مطلوب";
+        else if (value.trim().length < 2) error = "الاسم يجب أن يكون حرفين على الأقل";
+        break;
+      case "userPhone":
+        if (!value.trim()) error = "رقم الهاتف مطلوب";
+        else if (!/^[0-9+\-\s()]+$/.test(value.trim())) error = "رقم الهاتف غير صحيح";
+        break;
+      case "userEmail":
+        if (value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
+          error = "البريد الإلكتروني غير صحيح";
+        }
+        break;
+    }
+    
+    return error;
+  };
+
+  // Handle blur event to show errors
+  const handleBlur = (name: string) => {
+    setTouched(prev => ({ ...prev, [name]: true }));
+    const error = validateField(name, formData[name as keyof typeof formData]);
+    setErrors(prev => ({ ...prev, [name]: error }));
+  };
+
   // Get apartment ID from URL params
   const apartmentId = searchParams.get("apartmentId");
   const apartment = apartments.find((apt) => apt.id === apartmentId);
@@ -73,7 +106,30 @@ function BookAppointmentContent() {
       return;
     }
 
-    if (!formData.userName || !formData.userPhone) {
+    // Validate all fields
+    const requiredFields = ["userName", "userPhone"];
+    const allFields = ["userName", "userPhone", "userEmail"];
+    const newErrors: Record<string, string> = {};
+    const newTouched: Record<string, boolean> = {};
+
+    allFields.forEach(field => {
+      newTouched[field] = true;
+      const error = validateField(field, formData[field as keyof typeof formData]);
+      if (error) newErrors[field] = error;
+    });
+
+    setTouched(newTouched);
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    if (Object.values(newErrors).some(error => error)) {
+      showMessage("يرجى تصحيح الأخطاء في النموذج", "error");
+      return;
+    }
+
+    // Check required fields
+    const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData].trim());
+    if (missingFields.length > 0) {
       showMessage("يرجى ملء البيانات المطلوبة", "error");
       return;
     }
@@ -94,6 +150,14 @@ function BookAppointmentContent() {
 
       // Reset form and redirect after success
       setTimeout(() => {
+        setFormData({
+          userName: "",
+          userPhone: "",
+          userEmail: "",
+          userMessage: "",
+        });
+        setErrors({});
+        setTouched({});
         router.push(`/listings/listing/${apartment.id}`);
       }, 500);
     } catch {
@@ -106,6 +170,12 @@ function BookAppointmentContent() {
       ...prev,
       [field]: value,
     }));
+
+    // Validate if field was touched
+    if (touched[field]) {
+      const error = validateField(field, value);
+      setErrors(prev => ({ ...prev, [field]: error }));
+    }
   };
 
   if (!apartmentId) {
@@ -201,6 +271,9 @@ function BookAppointmentContent() {
               onSubmit={handleBookAppointment}
               loading={loading}
               apartment={apartment}
+              errors={errors}
+              touched={touched}
+              onBlur={handleBlur}
             />
           </div>
         </div>

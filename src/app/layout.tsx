@@ -14,6 +14,9 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "إسكان - سكن طلابي آمن ومريح",
   description: "ابحث عن أفضل سكن طلابي بالقرب من جامعتك",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

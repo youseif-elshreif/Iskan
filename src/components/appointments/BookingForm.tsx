@@ -36,6 +36,9 @@ interface BookingFormProps {
   onSubmit: () => void;
   loading: boolean;
   apartment: Apartment;
+  errors?: Record<string, string>;
+  touched?: Record<string, boolean>;
+  onBlur?: (name: string) => void;
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({
@@ -45,6 +48,9 @@ const BookingForm: React.FC<BookingFormProps> = ({
   onSubmit,
   loading,
   apartment,
+  errors = {},
+  touched = {},
+  onBlur = () => {},
 }) => {
   const router = useRouter();
 
@@ -74,15 +80,23 @@ const BookingForm: React.FC<BookingFormProps> = ({
             type="text"
             value={formData.userName}
             onChange={(e) => onInputChange("userName", e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2"
+            onBlur={() => onBlur("userName")}
+            className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
+              errors.userName && touched.userName 
+                ? "border-red-500 focus:ring-red-200" 
+                : "focus:ring-blue-200"
+            }`}
             style={{
-              borderColor: "var(--color-border)",
+              borderColor: errors.userName && touched.userName ? "#ef4444" : "var(--color-border)",
               backgroundColor: "var(--color-background)",
               color: "var(--color-text)",
             }}
             placeholder="أدخل اسمك الكامل"
             required
           />
+          {errors.userName && touched.userName && (
+            <p className="text-red-500 text-sm mt-1">{errors.userName}</p>
+          )}
         </div>
 
         <div>
@@ -96,15 +110,23 @@ const BookingForm: React.FC<BookingFormProps> = ({
             type="tel"
             value={formData.userPhone}
             onChange={(e) => onInputChange("userPhone", e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2"
+            onBlur={() => onBlur("userPhone")}
+            className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
+              errors.userPhone && touched.userPhone 
+                ? "border-red-500 focus:ring-red-200" 
+                : "focus:ring-blue-200"
+            }`}
             style={{
-              borderColor: "var(--color-border)",
+              borderColor: errors.userPhone && touched.userPhone ? "#ef4444" : "var(--color-border)",
               backgroundColor: "var(--color-background)",
               color: "var(--color-text)",
             }}
             placeholder="01xxxxxxxxx"
             required
           />
+          {errors.userPhone && touched.userPhone && (
+            <p className="text-red-500 text-sm mt-1">{errors.userPhone}</p>
+          )}
         </div>
 
         <div>
@@ -118,14 +140,22 @@ const BookingForm: React.FC<BookingFormProps> = ({
             type="email"
             value={formData.userEmail}
             onChange={(e) => onInputChange("userEmail", e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2"
+            onBlur={() => onBlur("userEmail")}
+            className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
+              errors.userEmail && touched.userEmail 
+                ? "border-red-500 focus:ring-red-200" 
+                : "focus:ring-blue-200"
+            }`}
             style={{
-              borderColor: "var(--color-border)",
+              borderColor: errors.userEmail && touched.userEmail ? "#ef4444" : "var(--color-border)",
               backgroundColor: "var(--color-background)",
               color: "var(--color-text)",
             }}
             placeholder="example@email.com"
           />
+          {errors.userEmail && touched.userEmail && (
+            <p className="text-red-500 text-sm mt-1">{errors.userEmail}</p>
+          )}
         </div>
 
         <div>

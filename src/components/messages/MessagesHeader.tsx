@@ -29,7 +29,10 @@ const MessagesHeader: React.FC<MessagesHeaderProps> = ({
           >
             الرسائل
           </h1>
-          <p className="mt-2 text-sm lg:text-base" style={{ color: "var(--color-text-muted)" }}>
+          <p
+            className="mt-2 text-sm lg:text-base"
+            style={{ color: "var(--color-text-muted)" }}
+          >
             إجمالي الرسائل: {totalMessages} | غير مقروءة: {unreadCount}
           </p>
         </div>

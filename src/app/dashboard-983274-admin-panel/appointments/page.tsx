@@ -9,6 +9,7 @@ import {
   PostponeModal,
 } from "@/components/appointments";
 import { MessageNotification } from "@/components/messages";
+import { ConfirmationModal } from "@/components/ui";
 import { useAppointments } from "@/services/hooks/useAppointments";
 import { Appointment } from "@/types";
 
@@ -33,6 +34,16 @@ export default function AppointmentsPage() {
     type: "success" | "error";
   } | null>(null);
 
+  // Confirmation modal
+  const [deleteConfirmation, setDeleteConfirmation] = useState<{
+    isOpen: boolean;
+    appointment: Appointment | null;
+  }>({
+    isOpen: false,
+    appointment: null,
+  });
+  const [confirmationLoading, setConfirmationLoading] = useState(false);
+
   // Show message for 3 seconds
   const showMessage = (text: string, type: "success" | "error") => {
     setMessage({ text, type });
@@ -54,13 +65,25 @@ export default function AppointmentsPage() {
 
   // Delete appointment
   const handleDeleteAppointment = async (appointment: Appointment) => {
-    if (!confirm("هل أنت متأكد من حذف هذا الموعد؟")) return;
+    setDeleteConfirmation({
+      isOpen: true,
+      appointment: appointment,
+    });
+  };
+
+  // Confirm delete appointment
+  const confirmDeleteAppointment = async () => {
+    if (!deleteConfirmation.appointment) return;
 
     try {
-      await deleteAppointmentAPI(appointment.id);
+      setConfirmationLoading(true);
+      await deleteAppointmentAPI(deleteConfirmation.appointment.id);
       showMessage("تم حذف الموعد بنجاح", "success");
+      setDeleteConfirmation({ isOpen: false, appointment: null });
     } catch {
       showMessage("فشل في حذف الموعد", "error");
+    } finally {
+      setConfirmationLoading(false);
     }
   };
 
@@ -127,6 +150,19 @@ export default function AppointmentsPage() {
         onClose={() => setPostponingAppointment(null)}
         onConfirm={handlePostponeAppointment}
         loading={loading}
+      />
+
+      {/* Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={deleteConfirmation.isOpen}
+        onClose={() => setDeleteConfirmation({ isOpen: false, appointment: null })}
+        onConfirm={confirmDeleteAppointment}
+        title="حذف الموعد"
+        message={`هل أنت متأكد من حذف موعد ${deleteConfirmation.appointment?.date} في تمام الساعة ${deleteConfirmation.appointment?.time}؟ لا يمكن التراجع عن هذا الإجراء.`}
+        confirmText="حذف"
+        cancelText="إلغاء"
+        type="danger"
+        loading={confirmationLoading}
       />
     </div>
   );

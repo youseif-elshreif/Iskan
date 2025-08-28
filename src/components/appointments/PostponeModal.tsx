@@ -34,12 +34,14 @@ const PostponeModal: React.FC<PostponeModalProps> = ({
   const [newDate, setNewDate] = useState("");
   const [newTime, setNewTime] = useState("");
   const [reason, setReason] = useState("");
+  const [error, setError] = useState("");
 
   const handleConfirm = () => {
     if (!newDate || !newTime) {
-      alert("يرجى اختيار التاريخ والوقت الجديد");
+      setError("يرجى اختيار التاريخ والوقت الجديد");
       return;
     }
+    setError("");
     onConfirm(newDate, newTime, reason);
     // Reset form
     setNewDate("");
@@ -51,6 +53,7 @@ const PostponeModal: React.FC<PostponeModalProps> = ({
     setNewDate("");
     setNewTime("");
     setReason("");
+    setError("");
     onClose();
   };
 
@@ -135,6 +138,13 @@ const PostponeModal: React.FC<PostponeModalProps> = ({
                 required
               />
             </div>
+
+            {/* Error message */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
 
             {/* Action buttons */}
             <div className="flex gap-2 pt-4">

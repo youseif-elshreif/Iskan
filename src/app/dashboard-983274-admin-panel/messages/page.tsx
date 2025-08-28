@@ -7,6 +7,7 @@ import {
   MessagesList,
   MessageNotification,
 } from "@/components/messages";
+import { ConfirmationModal } from "@/components/ui";
 import { useMessages } from "@/services/hooks/useMessages";
 import { Message } from "@/types";
 
@@ -33,6 +34,18 @@ export default function MessagesPage() {
     type: "success" | "error";
   } | null>(null);
 
+  // Confirmation modals
+  const [deleteConfirmation, setDeleteConfirmation] = useState<{
+    isOpen: boolean;
+    messageId: string | null;
+    type: "single" | "all";
+  }>({
+    isOpen: false,
+    messageId: null,
+    type: "single",
+  });
+  const [confirmationLoading, setConfirmationLoading] = useState(false);
+
   // Show message for 3 seconds
   const showMessage = (text: string, type: "success" | "error") => {
     setMessage({ text, type });
@@ -56,13 +69,26 @@ export default function MessagesPage() {
 
   // Delete message
   const handleDeleteMessage = async (id: string) => {
-    if (!confirm("هل أنت متأكد من حذف هذه الرسالة؟")) return;
+    setDeleteConfirmation({
+      isOpen: true,
+      messageId: id,
+      type: "single",
+    });
+  };
+
+  // Confirm delete message
+  const confirmDeleteMessage = async () => {
+    if (!deleteConfirmation.messageId) return;
 
     try {
-      await deleteMessageAPI(id);
+      setConfirmationLoading(true);
+      await deleteMessageAPI(deleteConfirmation.messageId);
       showMessage("تم حذف الرسالة بنجاح", "success");
+      setDeleteConfirmation({ isOpen: false, messageId: null, type: "single" });
     } catch {
       showMessage("فشل في حذف الرسالة", "error");
+    } finally {
+      setConfirmationLoading(false);
     }
   };
 
@@ -73,18 +99,24 @@ export default function MessagesPage() {
       return;
     }
 
-    if (
-      !confirm(
-        "هل أنت متأكد من حذف جميع الرسائل؟ لا يمكن التراجع عن هذا الإجراء."
-      )
-    )
-      return;
+    setDeleteConfirmation({
+      isOpen: true,
+      messageId: null,
+      type: "all",
+    });
+  };
 
+  // Confirm delete all messages
+  const confirmDeleteAllMessages = async () => {
     try {
+      setConfirmationLoading(true);
       await deleteAllMessagesAPI();
       showMessage("تم حذف جميع الرسائل بنجاح", "success");
+      setDeleteConfirmation({ isOpen: false, messageId: null, type: "single" });
     } catch {
       showMessage("فشل في حذف الرسائل", "error");
+    } finally {
+      setConfirmationLoading(false);
     }
   };
 
@@ -168,6 +200,23 @@ export default function MessagesPage() {
           loading={loading}
         />
       </div>
+
+      {/* Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={deleteConfirmation.isOpen}
+        onClose={() => setDeleteConfirmation({ isOpen: false, messageId: null, type: "single" })}
+        onConfirm={deleteConfirmation.type === "all" ? confirmDeleteAllMessages : confirmDeleteMessage}
+        title={deleteConfirmation.type === "all" ? "حذف جميع الرسائل" : "حذف الرسالة"}
+        message={
+          deleteConfirmation.type === "all"
+            ? "هل أنت متأكد من حذف جميع الرسائل؟ لا يمكن التراجع عن هذا الإجراء."
+            : "هل أنت متأكد من حذف هذه الرسالة؟ لا يمكن التراجع عن هذا الإجراء."
+        }
+        confirmText="حذف"
+        cancelText="إلغاء"
+        type="danger"
+        loading={confirmationLoading}
+      />
     </div>
   );
 }
