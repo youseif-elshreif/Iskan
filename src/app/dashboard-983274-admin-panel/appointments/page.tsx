@@ -7,6 +7,7 @@ import {
   CompletedAppointments,
   PostponedAppointments,
   PostponeModal,
+  AddAppointmentModal,
 } from "@/components/appointments";
 import { MessageNotification } from "@/components/messages";
 import { ConfirmationModal } from "@/components/ui";
@@ -18,6 +19,7 @@ export default function AppointmentsPage() {
   const {
     appointments,
     loading,
+    createAppointment,
     updateAppointment,
     deleteAppointment: deleteAppointmentAPI,
     postponeAppointment: postponeAppointmentAPI,
@@ -29,6 +31,7 @@ export default function AppointmentsPage() {
 
   const [postponingAppointment, setPostponingAppointment] =
     useState<Appointment | null>(null);
+  const [addAppointmentModalOpen, setAddAppointmentModalOpen] = useState(false);
   const [message, setMessage] = useState<{
     text: string;
     type: "success" | "error";
@@ -48,6 +51,25 @@ export default function AppointmentsPage() {
   const showMessage = (text: string, type: "success" | "error") => {
     setMessage({ text, type });
     setTimeout(() => setMessage(null), 3000);
+  };
+
+  // Add new appointment
+  const handleAddAppointment = async (appointmentData: {
+    date: string;
+    time: string;
+    notes?: string;
+  }) => {
+    try {
+      await createAppointment({
+        date: appointmentData.date,
+        time: appointmentData.time,
+        status: "available",
+      });
+      setAddAppointmentModalOpen(false);
+      showMessage("تم إضافة الموعد بنجاح", "success");
+    } catch {
+      showMessage("فشل في إضافة الموعد", "error");
+    }
   };
 
   // Update appointment status
@@ -107,7 +129,7 @@ export default function AppointmentsPage() {
     <div>
       <AppointmentsHeader
         appointments={appointments}
-        onAddNew={() => {}} // Removed add functionality
+        onAddNew={() => setAddAppointmentModalOpen(true)}
         loading={loading}
       />
 
@@ -149,6 +171,14 @@ export default function AppointmentsPage() {
         isOpen={!!postponingAppointment}
         onClose={() => setPostponingAppointment(null)}
         onConfirm={handlePostponeAppointment}
+        loading={loading}
+      />
+
+      {/* Add Appointment Modal */}
+      <AddAppointmentModal
+        isOpen={addAppointmentModalOpen}
+        onClose={() => setAddAppointmentModalOpen(false)}
+        onSubmit={handleAddAppointment}
         loading={loading}
       />
 

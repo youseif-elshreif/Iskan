@@ -1,4 +1,5 @@
 // Appointments Components
+export { default as AddAppointmentModal } from "./AddAppointmentModal";
 export { default as AppointmentSelector } from "./AppointmentSelector";
 export { default as AppointmentsHeader } from "./AppointmentsHeader";
 export { default as AvailableAppointments } from "./AvailableAppointments";
