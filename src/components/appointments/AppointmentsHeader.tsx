@@ -40,15 +40,15 @@ const AppointmentsHeader: React.FC<AppointmentsHeaderProps> = ({
   );
 
   return (
-    <div className="flex justify-between items-center mb-8">
+    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
       <div>
         <h1
-          className="text-3xl font-bold"
+          className="text-2xl sm:text-3xl font-bold"
           style={{ color: "var(--color-primary)" }}
         >
           إدارة المواعيد
         </h1>
-        <div className="flex gap-4 mt-2 text-sm">
+        <div className="flex flex-wrap gap-2 sm:gap-4 mt-2 text-sm">
           <span style={{ color: "var(--color-text-muted)" }}>
             المتاحة: {availableAppointments.length}
           </span>
@@ -63,7 +63,12 @@ const AppointmentsHeader: React.FC<AppointmentsHeaderProps> = ({
           </span>
         </div>
       </div>
-      <Button variant="filled" onClick={onAddNew} disabled={loading}>
+      <Button 
+        variant="filled" 
+        onClick={onAddNew} 
+        disabled={loading}
+        className="w-full sm:w-auto"
+      >
         <FaPlus className="ml-2" />
         إضافة موعد جديد
       </Button>

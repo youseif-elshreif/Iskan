@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/index";
 const HeroSection: React.FC = () => {
   return (
     <section
-      className="relative py-24 flex items-center justify-center"
+      className="relative pt-24 flex items-center justify-center"
       style={{
         backgroundColor: "var(--color-background-overlay)",
       }}

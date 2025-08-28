@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Card from "@/components/ui/Card";
 import { Button } from "@/components/ui/index";
+import { api } from "@/services/api";
 import {
   IoPersonOutline,
   IoMailOutline,
@@ -67,18 +68,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
         isRead: false,
       };
 
-      const response = await fetch(
-        "https://iskanjson-production.up.railway.app/messages",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(messageData),
-        }
-      );
+      const response = await api.post("/messages", messageData);
 
-      if (response.ok) {
+      if (response.status === 200 || response.status === 201) {
         setFormData({
           name: "",
           email: "",

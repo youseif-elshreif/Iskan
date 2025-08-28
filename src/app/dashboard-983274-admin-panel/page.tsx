@@ -226,7 +226,7 @@ export default function ApartmentsPage() {
   };
 
   return (
-    <div className="space-y-8">
+    <div>
       {/* Header */}
       <ApartmentsHeader
         showFilters={showFilters}

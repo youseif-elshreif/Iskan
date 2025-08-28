@@ -19,11 +19,15 @@ interface User {
 interface DashboardSidebarProps {
   user?: User | null;
   onLogout: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
   user,
   onLogout,
+  isOpen = false,
+  onClose,
 }) => {
   const pathname = usePathname();
 
@@ -47,7 +51,12 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
 
   return (
     <div
-      className="w-64 min-h-screen shadow-lg border-r"
+      className={`
+        w-64 min-h-screen shadow-lg border-r z-50
+        lg:relative lg:translate-x-0 lg:block
+        fixed top-0 transition-transform duration-300 ease-in-out pt-16 lg:pt-0
+        ${isOpen ? "translate-x-0" : "-translate-x-[-200%] lg:translate-x-0"}
+      `}
       style={{
         backgroundColor: "var(--color-primary)",
         borderColor: "var(--color-border)",
@@ -96,7 +105,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
           const Icon = item.icon;
 
           return (
-            <Link key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href} onClick={onClose}>
               <div
                 className={`flex items-center space-x-3 space-x px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer ${
                   isActive ? "shadow-md" : "hover:shadow-sm"
@@ -133,7 +142,10 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
           variant="secondary"
           size="md"
           className="w-full justify-center logout-button"
-          onClick={onLogout}
+          onClick={() => {
+            onLogout();
+            onClose?.();
+          }}
         >
           <FaSignOutAlt className="ml-2" />
           تسجيل الخروج

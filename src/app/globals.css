@@ -144,6 +144,7 @@ body {
 }
 
 /* Swiper customization for RTL */
+
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--color-secondary) !important;

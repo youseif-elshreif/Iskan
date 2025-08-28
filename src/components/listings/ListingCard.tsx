@@ -67,12 +67,12 @@ const ListingCard: React.FC<ListingCardProps> = ({
         {/* Buttons */}
         <div className="flex gap-3">
           <Link href={`/listings/listing/${id}`} className="flex-1">
-            <Button variant="outlined" size="sm">
+            <Button variant="outlined" size="sm" className="w-full">
               عرض التفاصيل
             </Button>
           </Link>
           <Link href={`/book-appointment?apartmentId=${id}`} className="flex-1">
-            <Button variant="secondary" size="sm">
+            <Button variant="secondary" size="sm" className="w-full">
               احجز ميعاد
             </Button>
           </Link>

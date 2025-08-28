@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { ContactUsButton } from "@/components/contact";
 import {
@@ -22,6 +22,9 @@ export default function ListingDetailPage() {
 
   // البحث عن الشقة بالـ ID
   const apartment = apartments.find((apt) => apt.id === listingId);
+  useEffect(() => {
+    console.log(apartment);
+  }, [apartment]);
 
   // تحويل الشقة إلى format الـ listing
   const listing = apartment
@@ -38,7 +41,7 @@ export default function ListingDetailPage() {
         description: apartment.description,
         image: apartment.imageUrl,
         size: apartment.size || "غير محدد",
-        images: apartment.images || [apartment.imageUrl],
+        images: apartment.images,
         amenities: apartment.amenities || [],
         mapEmbedUrl: "",
       }

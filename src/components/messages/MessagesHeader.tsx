@@ -21,24 +21,24 @@ const MessagesHeader: React.FC<MessagesHeaderProps> = ({
   return (
     <>
       {/* Header */}
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-4">
         <div>
           <h1
-            className="text-3xl font-bold"
+            className="text-2xl lg:text-3xl font-bold"
             style={{ color: "var(--color-primary)" }}
           >
             الرسائل
           </h1>
-          <p className="mt-2" style={{ color: "var(--color-text-muted)" }}>
+          <p className="mt-2 text-sm lg:text-base" style={{ color: "var(--color-text-muted)" }}>
             إجمالي الرسائل: {totalMessages} | غير مقروءة: {unreadCount}
           </p>
         </div>
-        <div className="flex space-x-3 space-x">
+        <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
           <Button
             variant="filled"
             onClick={onMarkAllAsRead}
             disabled={loading || unreadCount === 0}
-            className="flex items-center space-x-2 space-x"
+            className="flex items-center justify-center space-x-2 space-x w-full sm:w-auto"
           >
             <FaEnvelopeOpen />
             <span>تعليم الكل كمقروء</span>
@@ -47,7 +47,7 @@ const MessagesHeader: React.FC<MessagesHeaderProps> = ({
             variant="outlined"
             onClick={onDeleteAll}
             disabled={loading || totalMessages === 0}
-            className="border-red-500 text-red-500 hover:bg-red-50 flex items-center space-x-2 space-x"
+            className="border-red-500 text-red-500 hover:bg-red-50 flex items-center justify-center space-x-2 space-x w-full sm:w-auto"
           >
             <FaTrash />
             <span>حذف الكل</span>

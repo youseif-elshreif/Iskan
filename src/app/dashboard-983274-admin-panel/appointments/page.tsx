@@ -81,7 +81,7 @@ export default function AppointmentsPage() {
   };
 
   return (
-    <div className="space-y-8">
+    <div>
       <AppointmentsHeader
         appointments={appointments}
         onAddNew={() => {}} // Removed add functionality

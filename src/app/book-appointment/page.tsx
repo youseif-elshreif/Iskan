@@ -50,7 +50,7 @@ function BookAppointmentContent() {
   // Show message for 3 seconds
   const showMessage = (text: string, type: "success" | "error") => {
     setMessage({ text, type });
-    setTimeout(() => setMessage(null), 3000);
+    setTimeout(() => setMessage(null), 2000);
   };
 
   // Show error messages from hooks

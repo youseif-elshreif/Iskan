@@ -26,11 +26,11 @@ const ListingImageCarousel: React.FC<ListingImageCarouselProps> = ({
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
         loop
-        className="h-64 sm:h-80 md:h-96"
+        className="h-64 sm:h-80 md:h-96 w-full"
       >
         {images.map((image: string, index: number) => (
           <SwiperSlide key={index}>
-            <div className="relative h-64 sm:h-80 md:h-96">
+            <div className="relative h-64 sm:h-80 md:h-96  w-full">
               <Image
                 src={image}
                 alt={`${title} - صورة ${index + 1}`}

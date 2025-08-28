@@ -7,6 +7,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
+import { api } from "@/services/api";
 
 interface User {
   id: string;
@@ -59,10 +60,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   ): Promise<boolean> => {
     try {
       // Authenticate with JSON Server
-      const response = await fetch(
-        "https://iskanjson-production.up.railway.app/users"
-      );
-      const users: UserWithPassword[] = await response.json();
+      const response = await api.get("/users");
+      const users: UserWithPassword[] = response.data;
 
       const authenticatedUser = users.find(
         (u: UserWithPassword) =>

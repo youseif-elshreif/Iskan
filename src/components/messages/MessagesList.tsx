@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "@/components/ui/Card";
-import MessageCard from "@/components/MessageCard";
+import {MessageCard} from "@/components/messages/index";
 import { FaEnvelope } from "react-icons/fa";
 
 interface Message {
