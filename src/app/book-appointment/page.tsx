@@ -46,15 +46,17 @@ function BookAppointmentContent() {
   // Validation function
   const validateField = (name: string, value: string) => {
     let error = "";
-    
+
     switch (name) {
       case "userName":
         if (!value.trim()) error = "الاسم مطلوب";
-        else if (value.trim().length < 2) error = "الاسم يجب أن يكون حرفين على الأقل";
+        else if (value.trim().length < 2)
+          error = "الاسم يجب أن يكون حرفين على الأقل";
         break;
       case "userPhone":
         if (!value.trim()) error = "رقم الهاتف مطلوب";
-        else if (!/^[0-9+\-\s()]+$/.test(value.trim())) error = "رقم الهاتف غير صحيح";
+        else if (!/^[0-9+\-\s()]+$/.test(value.trim()))
+          error = "رقم الهاتف غير صحيح";
         break;
       case "userEmail":
         if (value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
@@ -62,15 +64,15 @@ function BookAppointmentContent() {
         }
         break;
     }
-    
+
     return error;
   };
 
   // Handle blur event to show errors
   const handleBlur = (name: string) => {
-    setTouched(prev => ({ ...prev, [name]: true }));
+    setTouched((prev) => ({ ...prev, [name]: true }));
     const error = validateField(name, formData[name as keyof typeof formData]);
-    setErrors(prev => ({ ...prev, [name]: error }));
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   // Get apartment ID from URL params
@@ -112,9 +114,12 @@ function BookAppointmentContent() {
     const newErrors: Record<string, string> = {};
     const newTouched: Record<string, boolean> = {};
 
-    allFields.forEach(field => {
+    allFields.forEach((field) => {
       newTouched[field] = true;
-      const error = validateField(field, formData[field as keyof typeof formData]);
+      const error = validateField(
+        field,
+        formData[field as keyof typeof formData]
+      );
       if (error) newErrors[field] = error;
     });
 
@@ -122,13 +127,15 @@ function BookAppointmentContent() {
     setErrors(newErrors);
 
     // Check if there are any errors
-    if (Object.values(newErrors).some(error => error)) {
+    if (Object.values(newErrors).some((error) => error)) {
       showMessage("يرجى تصحيح الأخطاء في النموذج", "error");
       return;
     }
 
     // Check required fields
-    const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData].trim());
+    const missingFields = requiredFields.filter(
+      (field) => !formData[field as keyof typeof formData].trim()
+    );
     if (missingFields.length > 0) {
       showMessage("يرجى ملء البيانات المطلوبة", "error");
       return;
@@ -174,7 +181,7 @@ function BookAppointmentContent() {
     // Validate if field was touched
     if (touched[field]) {
       const error = validateField(field, value);
-      setErrors(prev => ({ ...prev, [field]: error }));
+      setErrors((prev) => ({ ...prev, [field]: error }));
     }
   };
 
@@ -287,14 +294,16 @@ function BookAppointmentContent() {
 
 export default function BookAppointmentPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">جاري التحميل...</p>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-white flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">جاري التحميل...</p>
+          </div>
         </div>
-      </div>
-    }>
+      }
+    >
       <BookAppointmentContent />
     </Suspense>
   );

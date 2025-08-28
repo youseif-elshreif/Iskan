@@ -155,7 +155,9 @@ export default function AppointmentsPage() {
       {/* Confirmation Modal */}
       <ConfirmationModal
         isOpen={deleteConfirmation.isOpen}
-        onClose={() => setDeleteConfirmation({ isOpen: false, appointment: null })}
+        onClose={() =>
+          setDeleteConfirmation({ isOpen: false, appointment: null })
+        }
         onConfirm={confirmDeleteAppointment}
         title="حذف الموعد"
         message={`هل أنت متأكد من حذف موعد ${deleteConfirmation.appointment?.date} في تمام الساعة ${deleteConfirmation.appointment?.time}؟ لا يمكن التراجع عن هذا الإجراء.`}

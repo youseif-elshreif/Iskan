@@ -39,11 +39,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
   // Validation function
   const validateField = (name: string, value: string) => {
     let error = "";
-    
+
     switch (name) {
       case "name":
         if (!value.trim()) error = "الاسم مطلوب";
-        else if (value.trim().length < 2) error = "الاسم يجب أن يكون حرفين على الأقل";
+        else if (value.trim().length < 2)
+          error = "الاسم يجب أن يكون حرفين على الأقل";
         break;
       case "email":
         if (value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
@@ -57,18 +58,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
         break;
       case "message":
         if (!value.trim()) error = "الرسالة مطلوبة";
-        else if (value.trim().length < 10) error = "الرسالة يجب أن تكون 10 أحرف على الأقل";
+        else if (value.trim().length < 10)
+          error = "الرسالة يجب أن تكون 10 أحرف على الأقل";
         break;
     }
-    
+
     return error;
   };
 
   // Handle blur event to show errors
   const handleBlur = (name: string) => {
-    setTouched(prev => ({ ...prev, [name]: true }));
+    setTouched((prev) => ({ ...prev, [name]: true }));
     const error = validateField(name, formData[name as keyof FormData]);
-    setErrors(prev => ({ ...prev, [name]: error }));
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   // Show message for 3 seconds
@@ -89,7 +91,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
     // Validate if field was touched
     if (touched[name]) {
       const error = validateField(name, value);
-      setErrors(prev => ({ ...prev, [name]: error }));
+      setErrors((prev) => ({ ...prev, [name]: error }));
     }
   };
 
@@ -102,7 +104,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
     const newErrors: Record<string, string> = {};
     const newTouched: Record<string, boolean> = {};
 
-    allFields.forEach(field => {
+    allFields.forEach((field) => {
       newTouched[field] = true;
       const error = validateField(field, formData[field as keyof FormData]);
       if (error) newErrors[field] = error;
@@ -112,13 +114,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
     setErrors(newErrors);
 
     // Check if there are any errors
-    if (Object.values(newErrors).some(error => error)) {
+    if (Object.values(newErrors).some((error) => error)) {
       showMessage("يرجى تصحيح الأخطاء في النموذج", "error");
       return;
     }
 
     // Check required fields
-    const missingFields = requiredFields.filter(field => !formData[field as keyof FormData].trim());
+    const missingFields = requiredFields.filter(
+      (field) => !formData[field as keyof FormData].trim()
+    );
     if (missingFields.length > 0) {
       showMessage("يرجى ملء الحقول المطلوبة", "error");
       return;
@@ -222,12 +226,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
                 onBlur={() => handleBlur("name")}
                 required
                 className={`w-full pl-4 pr-10 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                  errors.name && touched.name 
-                    ? "border-red-500 focus:ring-red-200" 
+                  errors.name && touched.name
+                    ? "border-red-500 focus:ring-red-200"
                     : "focus:ring-blue-200"
                 }`}
                 style={{
-                  borderColor: errors.name && touched.name ? "#ef4444" : "var(--color-border)",
+                  borderColor:
+                    errors.name && touched.name
+                      ? "#ef4444"
+                      : "var(--color-border)",
                   backgroundColor: "var(--color-background)",
                   color: "var(--color-text)",
                 }}
@@ -260,12 +267,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
                 onChange={handleInputChange}
                 onBlur={() => handleBlur("email")}
                 className={`w-full pl-4 pr-10 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                  errors.email && touched.email 
-                    ? "border-red-500 focus:ring-red-200" 
+                  errors.email && touched.email
+                    ? "border-red-500 focus:ring-red-200"
                     : "focus:ring-blue-200"
                 }`}
                 style={{
-                  borderColor: errors.email && touched.email ? "#ef4444" : "var(--color-border)",
+                  borderColor:
+                    errors.email && touched.email
+                      ? "#ef4444"
+                      : "var(--color-border)",
                   backgroundColor: "var(--color-background)",
                   color: "var(--color-text)",
                 }}
@@ -298,12 +308,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
                 onChange={handleInputChange}
                 onBlur={() => handleBlur("phone")}
                 className={`w-full pl-4 pr-10 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                  errors.phone && touched.phone 
-                    ? "border-red-500 focus:ring-red-200" 
+                  errors.phone && touched.phone
+                    ? "border-red-500 focus:ring-red-200"
                     : "focus:ring-blue-200"
                 }`}
                 style={{
-                  borderColor: errors.phone && touched.phone ? "#ef4444" : "var(--color-border)",
+                  borderColor:
+                    errors.phone && touched.phone
+                      ? "#ef4444"
+                      : "var(--color-border)",
                   backgroundColor: "var(--color-background)",
                   color: "var(--color-text)",
                 }}
@@ -332,12 +345,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = "" }) => {
               required
               rows={5}
               className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 resize-vertical ${
-                errors.message && touched.message 
-                  ? "border-red-500 focus:ring-red-200" 
+                errors.message && touched.message
+                  ? "border-red-500 focus:ring-red-200"
                   : "focus:ring-blue-200"
               }`}
               style={{
-                borderColor: errors.message && touched.message ? "#ef4444" : "var(--color-border)",
+                borderColor:
+                  errors.message && touched.message
+                    ? "#ef4444"
+                    : "var(--color-border)",
                 backgroundColor: "var(--color-background)",
                 color: "var(--color-text)",
               }}

@@ -82,12 +82,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
             onChange={(e) => onInputChange("userName", e.target.value)}
             onBlur={() => onBlur("userName")}
             className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
-              errors.userName && touched.userName 
-                ? "border-red-500 focus:ring-red-200" 
+              errors.userName && touched.userName
+                ? "border-red-500 focus:ring-red-200"
                 : "focus:ring-blue-200"
             }`}
             style={{
-              borderColor: errors.userName && touched.userName ? "#ef4444" : "var(--color-border)",
+              borderColor:
+                errors.userName && touched.userName
+                  ? "#ef4444"
+                  : "var(--color-border)",
               backgroundColor: "var(--color-background)",
               color: "var(--color-text)",
             }}
@@ -112,12 +115,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
             onChange={(e) => onInputChange("userPhone", e.target.value)}
             onBlur={() => onBlur("userPhone")}
             className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
-              errors.userPhone && touched.userPhone 
-                ? "border-red-500 focus:ring-red-200" 
+              errors.userPhone && touched.userPhone
+                ? "border-red-500 focus:ring-red-200"
                 : "focus:ring-blue-200"
             }`}
             style={{
-              borderColor: errors.userPhone && touched.userPhone ? "#ef4444" : "var(--color-border)",
+              borderColor:
+                errors.userPhone && touched.userPhone
+                  ? "#ef4444"
+                  : "var(--color-border)",
               backgroundColor: "var(--color-background)",
               color: "var(--color-text)",
             }}
@@ -142,12 +148,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
             onChange={(e) => onInputChange("userEmail", e.target.value)}
             onBlur={() => onBlur("userEmail")}
             className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 focus:outline-none focus:ring-2 ${
-              errors.userEmail && touched.userEmail 
-                ? "border-red-500 focus:ring-red-200" 
+              errors.userEmail && touched.userEmail
+                ? "border-red-500 focus:ring-red-200"
                 : "focus:ring-blue-200"
             }`}
             style={{
-              borderColor: errors.userEmail && touched.userEmail ? "#ef4444" : "var(--color-border)",
+              borderColor:
+                errors.userEmail && touched.userEmail
+                  ? "#ef4444"
+                  : "var(--color-border)",
               backgroundColor: "var(--color-background)",
               color: "var(--color-text)",
             }}

@@ -67,16 +67,16 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
           {/* Header */}
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center space-x-3">
-              <div 
+              <div
                 className="p-3 rounded-full"
                 style={{ backgroundColor: typeStyles.iconBg }}
               >
-                <FaExclamationTriangle 
+                <FaExclamationTriangle
                   className="text-xl"
                   style={{ color: typeStyles.iconColor }}
                 />
               </div>
-              <h3 
+              <h3
                 className="text-lg font-semibold"
                 style={{ color: "var(--color-primary)" }}
               >
@@ -94,7 +94,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
 
           {/* Message */}
           <div className="mb-6">
-            <p 
+            <p
               className="text-sm leading-relaxed"
               style={{ color: "var(--color-text)" }}
             >

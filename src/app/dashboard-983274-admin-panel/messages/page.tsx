@@ -204,9 +204,21 @@ export default function MessagesPage() {
       {/* Confirmation Modal */}
       <ConfirmationModal
         isOpen={deleteConfirmation.isOpen}
-        onClose={() => setDeleteConfirmation({ isOpen: false, messageId: null, type: "single" })}
-        onConfirm={deleteConfirmation.type === "all" ? confirmDeleteAllMessages : confirmDeleteMessage}
-        title={deleteConfirmation.type === "all" ? "حذف جميع الرسائل" : "حذف الرسالة"}
+        onClose={() =>
+          setDeleteConfirmation({
+            isOpen: false,
+            messageId: null,
+            type: "single",
+          })
+        }
+        onConfirm={
+          deleteConfirmation.type === "all"
+            ? confirmDeleteAllMessages
+            : confirmDeleteMessage
+        }
+        title={
+          deleteConfirmation.type === "all" ? "حذف جميع الرسائل" : "حذف الرسالة"
+        }
         message={
           deleteConfirmation.type === "all"
             ? "هل أنت متأكد من حذف جميع الرسائل؟ لا يمكن التراجع عن هذا الإجراء."

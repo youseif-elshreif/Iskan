@@ -34,15 +34,17 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
   // Validation function
   const validateField = (name: string, value: string) => {
     let error = "";
-    
+
     switch (name) {
       case "title":
         if (!value.trim()) error = "العنوان مطلوب";
-        else if (value.trim().length < 3) error = "العنوان يجب أن يكون 3 أحرف على الأقل";
+        else if (value.trim().length < 3)
+          error = "العنوان يجب أن يكون 3 أحرف على الأقل";
         break;
       case "price":
         if (!value.trim()) error = "السعر مطلوب";
-        else if (!/^\d+$/.test(value.trim())) error = "السعر يجب أن يكون رقماً صحيحاً";
+        else if (!/^\d+$/.test(value.trim()))
+          error = "السعر يجب أن يكون رقماً صحيحاً";
         break;
       case "location":
         if (!value.trim()) error = "الموقع مطلوب";
@@ -62,15 +64,18 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
         }
         break;
     }
-    
+
     return error;
   };
 
   // Handle blur event to show errors
   const handleBlur = (name: string) => {
-    setTouched(prev => ({ ...prev, [name]: true }));
-    const error = validateField(name, formData[name as keyof ApartmentFormData] as string);
-    setErrors(prev => ({ ...prev, [name]: error }));
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    const error = validateField(
+      name,
+      formData[name as keyof ApartmentFormData] as string
+    );
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   const handleInputChange = (
@@ -86,13 +91,13 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
 
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
 
     // Real-time validation for immediate feedback
     if (touched[name]) {
       const error = validateField(name, value);
-      setErrors(prev => ({ ...prev, [name]: error }));
+      setErrors((prev) => ({ ...prev, [name]: error }));
     }
   };
 
@@ -124,23 +129,34 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Mark all fields as touched
-    const allFields = ["title", "price", "location", "area", "nearestUniversity", "size", "imageUrl"];
+    const allFields = [
+      "title",
+      "price",
+      "location",
+      "area",
+      "nearestUniversity",
+      "size",
+      "imageUrl",
+    ];
     const newTouched: Record<string, boolean> = {};
     const newErrors: Record<string, string> = {};
-    
-    allFields.forEach(field => {
+
+    allFields.forEach((field) => {
       newTouched[field] = true;
-      const error = validateField(field, formData[field as keyof ApartmentFormData] as string);
+      const error = validateField(
+        field,
+        formData[field as keyof ApartmentFormData] as string
+      );
       if (error) newErrors[field] = error;
     });
-    
+
     setTouched(newTouched);
     setErrors(newErrors);
-    
+
     // Check if there are any errors
-    if (Object.values(newErrors).some(error => error !== "")) {
+    if (Object.values(newErrors).some((error) => error !== "")) {
       return;
     }
 
@@ -196,12 +212,15 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onBlur={() => handleBlur("title")}
                     required
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.title && touched.title 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.title && touched.title
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.title && touched.title ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.title && touched.title
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
@@ -228,12 +247,15 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onBlur={() => handleBlur("price")}
                     required
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.price && touched.price 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.price && touched.price
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.price && touched.price ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.price && touched.price
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
@@ -260,19 +282,24 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onBlur={() => handleBlur("location")}
                     required
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.location && touched.location 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.location && touched.location
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.location && touched.location ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.location && touched.location
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
                     placeholder="الموقع"
                   />
                   {errors.location && touched.location && (
-                    <p className="text-red-500 text-sm mt-1">{errors.location}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.location}
+                    </p>
                   )}
                 </div>
 
@@ -291,12 +318,15 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onBlur={() => handleBlur("area")}
                     required
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.area && touched.area 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.area && touched.area
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.area && touched.area ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.area && touched.area
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
@@ -335,12 +365,15 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onBlur={() => handleBlur("nearestUniversity")}
                     required
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.nearestUniversity && touched.nearestUniversity 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.nearestUniversity && touched.nearestUniversity
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.nearestUniversity && touched.nearestUniversity ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.nearestUniversity && touched.nearestUniversity
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
@@ -353,7 +386,9 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     <option value="جامعة 6 أكتوبر">جامعة 6 أكتوبر</option>
                   </select>
                   {errors.nearestUniversity && touched.nearestUniversity && (
-                    <p className="text-red-500 text-sm mt-1">{errors.nearestUniversity}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.nearestUniversity}
+                    </p>
                   )}
                 </div>
 
@@ -399,12 +434,15 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onBlur={() => handleBlur("size")}
                     required
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.size && touched.size 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.size && touched.size
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.size && touched.size ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.size && touched.size
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
@@ -440,24 +478,32 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                     onChange={handleInputChange}
                     onBlur={() => handleBlur("imageUrl")}
                     className={`w-full px-4 py-2 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 ${
-                      errors.imageUrl && touched.imageUrl 
-                        ? "border-red-500 focus:ring-red-200" 
+                      errors.imageUrl && touched.imageUrl
+                        ? "border-red-500 focus:ring-red-200"
                         : "focus:ring-blue-200"
                     }`}
                     style={{
-                      borderColor: errors.imageUrl && touched.imageUrl ? "#ef4444" : "var(--color-border)",
+                      borderColor:
+                        errors.imageUrl && touched.imageUrl
+                          ? "#ef4444"
+                          : "var(--color-border)",
                       backgroundColor: "var(--color-background)",
                       color: "var(--color-text)",
                     }}
                     placeholder="رابط الصورة الرئيسية"
                   />
                   {errors.imageUrl && touched.imageUrl && (
-                    <p className="text-red-500 text-sm mt-1">{errors.imageUrl}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.imageUrl}
+                    </p>
                   )}
                   {/* Preview Main Image */}
                   {formData.imageUrl && (
                     <div className="mt-3">
-                      <p className="text-sm font-medium mb-2" style={{ color: "var(--color-primary)" }}>
+                      <p
+                        className="text-sm font-medium mb-2"
+                        style={{ color: "var(--color-primary)" }}
+                      >
                         معاينة الصورة الرئيسية:
                       </p>
                       <div className="relative w-full h-48 rounded-lg overflow-hidden border">
@@ -467,16 +513,17 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                           alt="معاينة الصورة الرئيسية"
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            e.currentTarget.style.display = 'none';
-                            const errorDiv = e.currentTarget.nextElementSibling as HTMLDivElement;
+                            e.currentTarget.style.display = "none";
+                            const errorDiv = e.currentTarget
+                              .nextElementSibling as HTMLDivElement;
                             if (errorDiv) {
-                              errorDiv.style.display = 'flex';
+                              errorDiv.style.display = "flex";
                             }
                           }}
                         />
-                        <div 
+                        <div
                           className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-500 text-sm"
-                          style={{ display: 'none' }}
+                          style={{ display: "none" }}
                         >
                           فشل في تحميل الصورة
                         </div>
@@ -571,16 +618,17 @@ const ApartmentForm: React.FC<ApartmentFormProps> = ({
                             alt={`معاينة الصورة ${index + 1}`}
                             className="w-full h-full object-cover"
                             onError={(e) => {
-                              e.currentTarget.style.display = 'none';
-                              const errorDiv = e.currentTarget.nextElementSibling as HTMLDivElement;
+                              e.currentTarget.style.display = "none";
+                              const errorDiv = e.currentTarget
+                                .nextElementSibling as HTMLDivElement;
                               if (errorDiv) {
-                                errorDiv.style.display = 'flex';
+                                errorDiv.style.display = "flex";
                               }
                             }}
                           />
-                          <div 
+                          <div
                             className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-500 text-sm"
-                            style={{ display: 'none' }}
+                            style={{ display: "none" }}
                           >
                             فشل في تحميل الصورة
                           </div>
